@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
     --primary-color: #e50914;
+    --dark-color: #141414;
 }
 
 * {
@@ -41,7 +44,7 @@ img {
 
 .showcase {
     width: 100%;
-    height: 75vh;
+    height: 80.5vh;
     position: relative;
     background: url('../images/background.jpg') no-repeat center center/cover;
     border-bottom: 7px solid #222222;
@@ -126,50 +129,256 @@ option {
     font-size: 1.25rem;
 }
 
-.showcase-content .subscribe {
-    display: flex;
+
+
+/* Tabs */
+.tabs {
+    background: var(--dark-color);
+    padding-top: 1rem;
+    border-bottom: 3px solid #222222;
+}
+
+.tabs .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tabs p {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+}
+
+.tabs .container>div {
+    padding: 2rem 0;
+}
+
+.tabs .container>div:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.tab-border {
+    border-bottom: var(--primary-color) 4px solid;
+}
+
+/* Tab Content */
+.tab-content {
+    padding: 3rem 0;
+    background: #000;
+    color: white;
+}
+
+.border {
+    display: block;
+    border: 4px solid #222222;
+    width: 100%;
+    margin: 50px 0;
+}
+
+/* Hide Content initially */
+
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+#tab-1-content .tab-1-content-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#tab-2-content .tab-2-content-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 30%;
-    position: relative;
 }
 
-.showcase-content .subscribe input {
-    padding: 1rem 1.3rem;
-    background: #2222226c;
-    outline: none;
-    border: 1px solid #444444;
-    border-radius: 2px;
-    width: 70%;
-    line-height: 1.5;
+#tab-2-content .tab-2-content-bottom {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table thead th {
+    text-transform: uppercase;
+    padding: 0.8rem;
+}
+
+.table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.table tbody tr td {
+    color: #999;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+}
+
+.table tbody tr td:first-child {
+    text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #222;
+}
+
+/* FAQ Section */
+
+
+
+.faq-section .container>p,
+.faq-section .container>h1 {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.faq-section .container>h1 {
+    font-size: 3rem;
+}
+
+.accordion {
+    background-color: #222222;
     color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 1.6rem 1.4rem;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.accordion i {
+    font-size: 1.6rem;
+}
+
+.active,
+.accordion:hover {
+    background-color: #444444;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #222222;
+    display: none;
+    overflow: hidden;
+}
+
+.panel p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.faq {
+    margin: 10px 0;
+
+}
+
+
+/* Footer */
+
+.footer {
+    max-width: 70%;
+    margin: 1rem auto;
+    overflow: auto;
+}
+
+.footer,
+.footer a {
+    color: #999;
     font-size: 0.9rem;
-    font-weight: 500;
-    position: relative;
 }
 
-.showcase-content .subscribe label {
-    position: absolute;
-    font-size: 0.9rem;
-    left: 30px;
-    transform-origin: 0 0;
-    transition: transform 0.2s ease-in-out;
+.footer p {
+    margin-bottom: 1.5rem;
 }
 
-.showcase-content .subscribe input:focus+label,
-input:not(:placeholder-shown)+label {
-    transform: translateY(-1em) scale(0.8);
+.footer .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+.footer li {
+    line-height: 1.9;
+}
+
+.footer .lang-select {
+    margin-top: 2rem;
+    color: #999;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #333;
+    padding: 1rem 1.2rem;
+    border-radius: 5px;
 }
 
 
+/* container */
 
-.showcase-content .subscribe a {
-    padding: 1.2rem 1.3rem;
-    font-size: 1rem;
+.container {
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
 }
 
+/* Text Styles */
 
+.text-xl {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text-lg {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.text-md {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-dark {
+    color: #999;
+}
 
 /* Buttons */
 
@@ -207,4 +416,88 @@ input:not(:placeholder-shown)+label {
     font-size: 1rem;
     padding: 0.8rem 1.3rem;
     text-transform: uppercase;
+}
+
+
+@media (max-width: 960px) {
+    .showcase {
+        height: 70vh;
+    }
+
+    .hide-sm {
+        display: none;
+    }
+
+    .showcase-top {
+        justify-content: space-between;
+    }
+
+    .showcase-content h1 {
+        font-size: 1.7rem;
+        line-height: 1;
+    }
+
+    .showcase-content p {
+        font-size: 1rem;
+
+    }
+
+    .showcase-content p:nth-child(3) {
+        font-size: 0.9rem;
+    }
+
+    .footer .footer-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn-xl {
+        font-size: 1.5rem;
+        padding: 1.4rem 2rem;
+    }
+
+    .text-xl {
+        font-size: 1.5rem;
+    }
+
+    .text-lg {
+        font-size: 1.3rem;
+    }
+
+    .text-md {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .navright select {
+        display: none;
+    }
+
+    .container {
+        max-width: 95%;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 2rem;
+    }
+
+    .showcase::after {
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: inset 80px 80px 250px #000000, inset -80px -80px 250px #000000;
+
+    }
+
+    #tab-1-content .tab-1-content-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #tab-2-content .tab-2-content-top {
+        display: block;
+        text-align: center;
+    }
+
+    #tab-2-content .tab-2-content-bottom {
+        grid-template-columns: 1fr;
+    }
 }
